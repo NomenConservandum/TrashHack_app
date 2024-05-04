@@ -21,9 +21,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     var email by remember {
         mutableStateOf("")
     }
@@ -82,8 +83,9 @@ fun LoginScreen() {
 
         Spacer(modifier = Modifier.height(48.dp))
 
-        Text(text = "Skip", Modifier.clickable {
 
+        Text(text = "Skip", Modifier.clickable {
+            navController.navigate("toclean_page")
         })
     }
 }

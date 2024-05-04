@@ -12,7 +12,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-//import androidx.compose.
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+//import androidx.navigation.compose.NavHostController
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.trashhack_app.ui.theme.Trashhack_appTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,14 +24,27 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            val navController = rememberNavController()
+
+            //val navController = rememberNavController()
+            androidx.navigation.compose.NavHost(navController = navController, startDestination = "Log_In_Screen") {
+                composable("Log_In_Screen") {
+                    com.example.trashhack_app.LoginScreen(navController)
+                }
+                composable("toclean_page") {
+                    com.example.trashhack_app.ToCleanPage()
+                }
+            }
+            /*
             Trashhack_appTheme {
                 Surface (
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    com.example.trashhack_app.LoginScreen() //ToCleanPage()
+                    com.example.trashhack_app.LoginScreen(navController) //ToCleanPage()
                 }
             }
+             */
         }
     }
 }
