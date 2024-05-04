@@ -25,6 +25,7 @@ import androidx.navigation.NavController
 
 @Composable
 fun LoginScreen(navController: NavController) {
+    println("The user is now on Log In screen")
     var email by remember {
         mutableStateOf("")
     }
@@ -85,7 +86,7 @@ fun LoginScreen(navController: NavController) {
 
 
         Text(text = "Skip", Modifier.clickable {
-            navController.navigate("toclean_page")
+            navController.navigate("mainmenu")
         })
     }
 }

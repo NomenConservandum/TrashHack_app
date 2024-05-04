@@ -32,7 +32,10 @@ class MainActivity : ComponentActivity() {
                     com.example.trashhack_app.LoginScreen(navController)
                 }
                 composable("toclean_page") {
-                    com.example.trashhack_app.ToCleanPage()
+                    com.example.trashhack_app.ToCleanPage(navController)
+                }
+                composable("mainmenu") {
+                    com.example.trashhack_app.MainMenu(navController)
                 }
             }
             /*
