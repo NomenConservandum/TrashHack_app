@@ -11,8 +11,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -27,26 +25,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-// import androidx.media3.common.Format
 import java.text.SimpleDateFormat
 import java.util.Locale
 import androidx.navigation.NavController
 
 @Composable
-fun RequestsListPage(navController: NavController) {
+fun RequestsListPage(navController: NavController, RequestsList: List<Request>) {
     println("Request List Page is now active")
-    val RequestsList = com.example.trashhack_app.getFakeRequest();
+
     println()
     Column (
         modifier = Modifier
             .fillMaxHeight()
             .padding(21.dp)
     ) {
-        Text(text = "Hello there! These are the items to be thrown away!")
+        Text(text = "Привет! Это те места, которые следует очистить!")
         Button(onClick = {
             navController.navigate("mainmenu")
         }) {
-            Text(text = "Go back")
+            Text(text = "Назад")
         }
         LazyColumn (
             content = {
@@ -96,11 +93,6 @@ fun RequestItem(item: Request) {
                 color = Color.DarkGray
             )
         }
-        /*
-        IconButton(onClick = { }) {
-            Icon(painter = painterResource(id = R.drawable.baseline_handshake_24), contentDescription = "Respond")
-        }
-         */
     }
 }
 

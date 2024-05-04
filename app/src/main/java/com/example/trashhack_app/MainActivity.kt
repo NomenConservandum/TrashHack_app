@@ -18,6 +18,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.trashhack_app.ui.theme.Trashhack_appTheme
 
+object req_List {
+    public var requestsList = com.example.trashhack_app.getFakeRequest()
+}
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,10 +37,10 @@ class MainActivity : ComponentActivity() {
                     com.example.trashhack_app.MainMenu(navController)
                 }
                 composable("trashrequests") {
-                    com.example.trashhack_app.RequestsListPage(navController)
+                    com.example.trashhack_app.RequestsListPage(navController, req_List.requestsList)
                 }
                 composable("request_trashtakeout") {
-                    com.example.trashhack_app.RequestsPage(navController)
+                    com.example.trashhack_app.RequestsPage(navController, req_List.requestsList)
                 }
             }
         }
