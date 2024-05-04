@@ -1,10 +1,12 @@
 package com.example.trashhack_app
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -38,19 +40,25 @@ fun RequestsListPage(navController: NavController, RequestsList: List<Request>) 
 
     println()
     Column (
-        modifier = Modifier
-            .fillMaxHeight()
-            .padding(21.dp)
+        //делаем так чтобы данная колонка занимала весь экран
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(64.dp))
 
         Text(
-            text = "Запросы",
-            fontSize = 20.sp,
+            text = "Запросы:",
+            fontSize = 28.sp,
             fontWeight = FontWeight.Bold
         )
+    }
+    Column (
+        modifier = Modifier
+            .fillMaxHeight()
+            .padding(21.dp)
+    ) {
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(80.dp))
 
         Button(onClick = {
             navController.navigate("mainmenu")

@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
@@ -41,6 +42,7 @@ fun CreateAccountPage(navController: NavController) {
     var password by remember {
         mutableStateOf("")
     }
+
     Column (
         //делаем так чтобы данная колонка занимала весь экран
         modifier = Modifier.fillMaxSize(),
@@ -48,17 +50,10 @@ fun CreateAccountPage(navController: NavController) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        //выставили нужный размер шрифта и вывели текст
-        Button(onClick = {
-            navController.navigate("Log_In_Screen")
-        }) {
-            Text(text = "Назад")
-        }
 
         Text(text = "Создание аккаунта", fontSize = 28.sp, fontWeight = FontWeight.Bold)
 
         Spacer(modifier = Modifier.height(16.dp))
-
 
         //ввод фамилии
         OutlinedTextField(value = familyUser, onValueChange = {
@@ -69,13 +64,13 @@ fun CreateAccountPage(navController: NavController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-
         //ввод имени
         OutlinedTextField(value = nameUser, onValueChange = {
             nameUser = it
         }, label = {
             Text(text = "Имя")
         })
+
         Spacer(modifier = Modifier.height(16.dp))
 
         //ввод компании
@@ -85,13 +80,14 @@ fun CreateAccountPage(navController: NavController) {
             Text(text = "Компания/организация")
         })
 
+        Spacer(modifier = Modifier.height(16.dp))
+
         //ввод почты
         OutlinedTextField(value = email, onValueChange = {
             email = it
         }, label = {
             Text(text = "Почта")
         })
-
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -104,8 +100,15 @@ fun CreateAccountPage(navController: NavController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Button(onClick = {}){
+        Button(onClick = {
+            navController.navigate("mainmenu")
+        }){
             Text(text = "Создать аккаунт")
+        }
+        Button(onClick = {
+            navController.navigate("Log_In_Screen")
+        }) {
+            Text(text = "Назад")
         }
     }
 }

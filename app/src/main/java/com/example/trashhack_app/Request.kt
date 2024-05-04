@@ -16,7 +16,7 @@ data class Request (
 
 fun getFakeRequest() : List<Request> {
     return listOf<Request> (
-        Request(1, Date.from(Instant.now()), "Shi", "Tya", "Mya", "4a", "Низкий", false),
-        Request(2, Date.from(Instant.now()), "Shi", "Mya", "Tya", "4b", "Высокий", false)
+        Request(1, Date.from(Instant.now()), "Shi", "Москва", "Малая Никитенская", "4a", "Высокий", false),
+        Request(2, Date.from(Instant.now()), "Shi", "Саратов", "Московская", "64", "Низкий", false)
     );
 }

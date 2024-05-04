@@ -81,11 +81,5 @@ fun LoginScreen(navController: NavController) {
         }) {
             Text(text = "Создайте его!")
         }
-
-        Spacer(modifier = Modifier.height(48.dp))
-
-        Text(text = "Skip", Modifier.clickable {
-            navController.navigate("mainmenu")
-        })
     }
 }
