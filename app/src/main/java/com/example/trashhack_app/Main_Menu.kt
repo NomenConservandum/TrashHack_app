@@ -35,12 +35,12 @@ fun MainMenu(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(onClick = {
-            navController.navigate("toclean_page")
+            navController.navigate("trashrequests")
         }) {
             Text(text = "Trash Reports")
         }
         Button(onClick = {
-            // navController.navigate()
+            navController.navigate("request_trashtakeout")
         }) {
             Text(text = "Report Trash")
         }

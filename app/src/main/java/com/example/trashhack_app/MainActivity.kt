@@ -31,11 +31,14 @@ class MainActivity : ComponentActivity() {
                 composable("Log_In_Screen") {
                     com.example.trashhack_app.LoginScreen(navController)
                 }
-                composable("toclean_page") {
-                    com.example.trashhack_app.ToCleanPage(navController)
-                }
                 composable("mainmenu") {
                     com.example.trashhack_app.MainMenu(navController)
+                }
+                composable("trashrequests") {
+                    com.example.trashhack_app.RequestsListPage(navController)
+                }
+                composable("request_trashtakeout") {
+                    com.example.trashhack_app.RequestsPage(navController)
                 }
             }
             /*
