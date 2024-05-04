@@ -36,6 +36,9 @@ class MainActivity : ComponentActivity() {
                 composable("mainmenu") {
                     com.example.trashhack_app.MainMenu(navController)
                 }
+                composable("registration") {
+                    com.example.trashhack_app.CreateAccountPage(navController)
+                }
                 composable("trashrequests") {
                     com.example.trashhack_app.RequestsListPage(navController, req_List.requestsList)
                 }

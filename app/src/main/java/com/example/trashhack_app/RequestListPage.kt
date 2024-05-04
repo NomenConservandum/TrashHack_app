@@ -73,24 +73,24 @@ fun RequestItem(item: Request) {
             Text(
                 text = SimpleDateFormat("HH:mm:aa, dd/mm", Locale.ENGLISH).format(item.createdAt),
                 fontSize = 10.sp,
-                color = Color.Blue
+                color = Color.White
             )
             Text(
-                text = item.city.toString(),
+                text = "Город: " + item.city.toString(),
                 fontSize = 21.sp,
-                color = Color.DarkGray
+                color = Color.White
             )
-            Text(text = item.street.toString(),
+            Text(text = "Улица: " + item.street.toString(),
                 fontSize = 21.sp,
-                color = Color.DarkGray
+                color = Color.White
             )
-            Text(text = item.house.toString(),
+            Text(text = "Дом: " + item.house.toString(),
                 fontSize = 21.sp,
-                color = Color.DarkGray
+                color = Color.White
             )
-            Text(text = item.user.toString(),
+            Text(text = "Уровень загрязнения: " + item.level.toString(),
                 fontSize = 21.sp,
-                color = Color.DarkGray
+                color = Color.White
             )
         }
     }

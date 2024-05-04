@@ -79,7 +79,7 @@ fun RequestsPage(navController: NavController, requestsList: List<Request>) {
         OutlinedTextField(value = num, onValueChange = {
             num = it
         }, label = {
-            Text(text = "Номер Дома")
+            Text(text = "Дом")
         })
 
         Spacer(modifier = Modifier.height(16.dp))
