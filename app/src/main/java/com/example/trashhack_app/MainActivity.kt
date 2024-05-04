@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
-//import androidx.navigation.compose.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.trashhack_app.ui.theme.Trashhack_appTheme
@@ -26,7 +25,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
 
-            //val navController = rememberNavController()
             androidx.navigation.compose.NavHost(navController = navController, startDestination = "Log_In_Screen") {
                 composable("Log_In_Screen") {
                     com.example.trashhack_app.LoginScreen(navController)
@@ -41,16 +39,6 @@ class MainActivity : ComponentActivity() {
                     com.example.trashhack_app.RequestsPage(navController)
                 }
             }
-            /*
-            Trashhack_appTheme {
-                Surface (
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    com.example.trashhack_app.LoginScreen(navController) //ToCleanPage()
-                }
-            }
-             */
         }
     }
 }

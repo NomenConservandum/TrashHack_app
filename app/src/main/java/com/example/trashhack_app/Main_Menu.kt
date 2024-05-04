@@ -46,6 +46,4 @@ fun MainMenu(navController: NavController) {
         }
 
     }
-
-    //Text(text = "Hello there! These are the items to be thrown away!")
 }
