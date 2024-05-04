@@ -3,6 +3,7 @@ package com.example.trashhack_app
 import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -46,12 +47,7 @@ fun RequestsPage(navController: NavController, requestsList: List<Request>) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        Text(text = "Привет! Здесь вы можете оставить заявку на вывоз мусора!")
-        Button(onClick = {
-            navController.navigate("mainmenu")
-        }) {
-            Text(text = "Назад")
-        }
+        Spacer(modifier = Modifier.height(64.dp))
         //выставили нужный размер шрифта и вывели текст
         Text(
             text = "Создание запроса",
@@ -83,18 +79,34 @@ fun RequestsPage(navController: NavController, requestsList: List<Request>) {
         })
 
         Spacer(modifier = Modifier.height(16.dp))
-
-        Button(onClick = {
-            Log.i("Credential", "Pollution level: $polution_level address: $street")
-            if (polution_level != "" || street != "") {
+        Row ( modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = Arrangement.SpaceAround
+        ) {
+            Button(onClick = {
                 navController.navigate("mainmenu")
-                com.example.trashhack_app.req_List.requestsList += listOf<Request> (
-                    Request(1, Date.from(Instant.now()), "We", city, street, num, polution_level, false)
-                )
+            }) {
+                Text(text = "Назад")
             }
-        }) {
-            Text(text = "Завершить")
+            Button(onClick = {
+                Log.i("Credential", "Pollution level: $polution_level address: $street")
+                if (polution_level != "" || street != "") {
+                    navController.navigate("mainmenu")
+                    com.example.trashhack_app.req_List.requestsList += listOf<Request>(
+                        Request(
+                            1,
+                            Date.from(Instant.now()),
+                            "We",
+                            city,
+                            street,
+                            num,
+                            polution_level,
+                            false
+                        )
+                    )
+                }
+            }) {
+                Text(text = "Завершить")
+            }
         }
-
     }
 }
